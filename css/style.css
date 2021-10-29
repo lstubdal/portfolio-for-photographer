@@ -1,23 +1,25 @@
 * {padding: 0; margin: 0; box-sizing: border-box;}
 
 body {
+    background-image: url('/assets/img/frontpage.png');
+    background-size: cover;
     background-color: var(--dark);
     font-size: 16px;
 }
 
 .frontpage {
     display: grid;
-    grid-template-columns:repeat(3, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns:repeat(5, 1fr);
+    grid-auto-rows: 1fr;
     width: 100vw;
     height: 100vh;
-    background-image: url('/assets/img/frontpage.png');
-    object-fit: cover;
     gap:10px;
     grid-template-areas: 
-    ". . ."
-    "nav quote title"
-    ". cta ."
+    "nav . . . title"
+    "nav . . . title"
+    "nav . quote . title"
+    "nav . quote . title"
+    "nav cta cta cta ."
     ;
 }
 
@@ -26,8 +28,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    margin-left: 25%;       /* noe annet enn margin? */
+    border:2px solid black;
+       /* noe annet enn margin? */
 }
 
 .frontpage .frontpage__nav a {
@@ -36,34 +40,47 @@ body {
     font-size: 2.2em;
     font-family: var(--main-font);
     cursor: pointer;
+    /*margin-left: 22%;*/
+    
+}
+
+.frontpage .frontpage__hamburger {
+    grid-area: hamburger;
+    width: 30%;
+    height: 30%;
+    display: none;
+    
 }
 
 .frontpage .frontpage__nav a:hover {
     color: var(--light);
+    
 }
 
 .frontpage .frontpage__quoteContainer {
     grid-area: quote;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
+    border:2px solid black;
 }
 
 .frontpage .frontpage__quoteContainer .frontpage__quote {
-    height:0;
-    width: 25%;
-    margin-left: 5%;
-    margin-top:25%;
+    /*margin-left: 5%;
+    margin-top:25%;*/
     color: var(--orange);
     font-family: var(--second-font);
     font-size: 1em;
+    border:2px solid black;
 }
 
 .frontpage .frontpage__quoteContainer .frontpage__quote:hover {
-    font-size: 2em;
-    width:70%;
-    margin-top: 20%;
+    font-size: 1.5em;
+    width:100%;
+    /*margin-top: 20%;*/
 }
 
 
@@ -71,13 +88,14 @@ body {
     grid-area: cta;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     font-size: 2.5em;
     font-family: var(--second-font);
     color: var(--golden);
-    padding:30px;
     cursor: pointer;
+    border:2px solid black;
+    width:100%; /* ??*/
 }
 
 .frontpage .frontpage__cta:hover {
@@ -88,27 +106,33 @@ body {
     padding:20px;
 }
 
-.frontpage .frontpage__cta img:hover {      /* finne på noe bedre */
+/*
+.frontpage .frontpage__cta img:hover {     
     margin-left: 10%;
-}
+}*/
 
 .frontpage .frontpage__title {
     grid-area: title;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    width: 62%;
+    width: 100%;
     font-family: var(--main-font);
     font-size: 3.5em;
     color: var(--golden);
+    border:2px solid black;
+
 }
 
-
 /******* TO DO ***********
+    0. responsive
     1. hover underline
     2. fix title -> one <p>/<span>
     3. frontpage hover title - expand
-    4. navigate to gallery 
+    5. fix frontpage img scaling
+
 
 
 */
