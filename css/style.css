@@ -11,14 +11,13 @@ body {
     width: 100vw;
     height: 100vh;
     /* fix til noe bedre, tenk universiell utforming */
-    background-image: url('/assets/img/websiteImg/frontpage.png');
+    background-image: url('/assets/img/website/frontpage.png');
     background-size: cover;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
 }
 
-.frontpage .frontpage__item { /* for grid items */
+.frontpage .frontpage__item {                   /* for grid items */
     width: 100%;
     height: 100%;
 }
@@ -146,14 +145,11 @@ body {
     width: 73%;
 }
 
-
-
-
-/********* Responsive ************/
+/********* Responsive: frontpage ************/
 
 @media screen and (max-width: 520px){
     .frontpage { /* endre til 'small' */
-        background-image: url('/assets/img/websiteImg/frontpage-mobile.png');
+        background-image: url('/assets/img/website/frontpage-mobile.png');
     }
 
     .frontpage .frontpage__item {
@@ -200,15 +196,87 @@ body {
 
     .frontpage .frontpage__order--3 {
         order: 2;
-    }
-
-
-    
+    }   
 }
+
+/************* Gallery ***************/
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.gallery__logo {
+    width: 70px;
+    height: 70px;
+    padding: 15px;
+    margin-left: 15%;
+}
+
+.gallery__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 95vw;
+    height: 20vh;
+    text-decoration: none;   
+}
+
+.gallery__nav a {
+    font-family: var(--main-font);
+    font-size: 1.3em;
+    color: var(--golden);
+    text-decoration: none;
+    width: 12%;
+}
+
+.gallery .gallery__nav--current  {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.galleryContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 70vw;
+    margin: 0 auto;
+    margin-top: 10%;
+    gap: 30px;
+    border: 2px white solid;
+}
+
+.galleryContainer .galleryContainer__image--small {
+    grid-column: span 2;
+}
+
+.galleryContainer .galleryContainer__image--medium {
+    grid-column: span 3;
+} 
+
+.galleryContainer .galleryContainer__quote {
+    
+    color: var(--light);
+    font-family: var(--second-font);
+    font-size: 1.8em;
+    line-height: 1.1;
+    padding: 48px; 
+    width: 38%;
+    background-color: blue;
+}
+
+.galleryContainer .galleryContainer__quote--big {
+    grid-column: span 5;
+    background-color: red;
+}
+
+
 
 
 /****** to do *******
     1. hamburger til høyre
+    2. responsive background image
 
 
 */
