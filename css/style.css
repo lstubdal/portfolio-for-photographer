@@ -30,7 +30,7 @@ body {
 
 .frontpage .frontpage__hamburgermenu {
     display: none;
-    width: 82%;
+    width: 80%;
     height: 35%;
     margin-top: 50%;
     position: absolute;
@@ -44,13 +44,15 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 65%;
     width: 100%;
 }
 
-.frontpage .frontpage__hamburgermenu img{
-    margin-left: 85%;
-    margin-top: 5%;
+.frontpage .frontpage__hamburgermenu .frontpage__hamburgerExit{
+    margin-left: 80%; /* finne annen løsning... */
+    margin-top: 9%;
+    width: 11%;
+    height: 11%;
 }
 
 .frontpage .frontpage__hamburgermenu .frontpage__hamburgernav button {
