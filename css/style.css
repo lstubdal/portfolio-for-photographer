@@ -5,59 +5,209 @@ body {
     font-size: 16px;
 }
 
+/************ Frontpage *************/
+
 .frontpage {
     width: 100vw;
     height: 100vh;
-    background-image: url('/assets/img/frontpage.png');
+    /* fix til noe bedre, tenk universiell utforming */
+    background-image: url('/assets/img/websiteImg/frontpage.png');
     background-size: cover;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+
 }
 
-.frontpage .frontpage__item {
+.frontpage .frontpage__item { /* for grid items */
     width: 100%;
     height: 100%;
-
 }
+
+.frontpage .frontpage__hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.frontpage .frontpage__hamburgermenu {
+    display: none;
+    width: 82%;
+    height: 35%;
+    margin-top: 50%;
+    position: absolute;
+    z-index: 1;
+    grid-column: span 3;
+    background-color: var(--golden);
+}
+
+.frontpage .frontpage__hamburgermenu .frontpage__hamburgernav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+}
+
+.frontpage .frontpage__hamburgermenu img{
+    margin-left: 85%;
+    margin-top: 5%;
+}
+
+.frontpage .frontpage__hamburgermenu .frontpage__hamburgernav button {
+    color: var(--light);
+    font-family: var(--main-font);
+    font-size: 1.2em;
+    background: none;
+    border: none;  
+}
+
+.frontpage .frontpage__hamburgermenu .frontpage__hamburgernav a {
+    color: var(--light);
+}
+
 
 .frontpage .frontpage__nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    width: 80%;
+    height: 100%;
+    margin-left: 25%;
 }
 
-.frontpage .frontpage__nav a{
-    font-size: 3em;
+.frontpage .frontpage__nav a {
     font-family: var(--main-font);
+    font-size: 2em;
+    width: 70%;
     color: var(--golden);
     text-decoration: none;
 }
 
+.frontpage .frontpage__nav a:hover {
+    color: var(--orange);
+    border-bottom: 1.2px solid var(--orange);
+}
 
+.frontpage .frontpage__quote {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: centers;
+    align-items: center;
+    font-family: var(--second-font);
+    color: var(--orange);
+    font-size: 1em;
+    line-height: 1.2;
+    height: 100%;
+    width: 32%;
+    margin-left: 43%;
+}
 
-@media screen and (max-width: 600px){
-    .frontpage .frontpage__columns--4 {
-        grid-column: span 3;
-    }  
+.frontpage .frontpage__quote p:hover {
+    font-size: 2em;
+    width: 250%;
+    margin-bottom: 20%;
+}
 
-    .frontpage .frontpage__nav {
-        display: none;
-    }
+.frontpage .frontpage__cta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height:15%;
+    width: 300%;
+    padding:20px;
+}
+
+.frontpage .frontpage__cta a:hover {
+    color: var(--orange);
+    border-bottom: 2px solid var(--orange);
+}
+
+.frontpage .frontpage__cta a {
+    text-decoration: none;
+    font-size: 1.8em;
+    color: var(--golden);
+}
+
+.frontpage .frontpage__cta img {
+    padding: 20px;
+}
+
+.frontpage .frontpage__title {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: var(--main-font);
+    color: var(--golden);
+    font-size: 2.7em;
+    width: 73%;
 }
 
 
 
- 
 
-/******* TO DO ***********
-    0. responsive
-    1. hover underline
-    2. fix title -> one <p>/<span>
-    3. frontpage hover title - expand
-    5. fix frontpage img scaling
+/********* Responsive ************/
 
+@media screen and (max-width: 520px){
+    .frontpage { /* endre til 'small' */
+        background-image: url('/assets/img/websiteImg/frontpage-mobile.png');
+    }
+
+    .frontpage .frontpage__item {
+        grid-column: span 3 ;
+    }
+
+    .frontpage .frontpage__hamburger {
+        width: 50%;
+        height: 100%;
+        color: var(--orange);
+        display: block;
+        grid-column-start: 3;
+        margin-top: 20%;
+        margin-left: 230%; /* finne bedre løsning */
+    }
+
+    .frontpage .frontpage__nav a {
+        display: none;
+    }
+
+    .frontpage .frontpage__cta {
+        width: 70vw;
+        margin-bottom: 20%;
+        margin-right: 50%;
+    }
+
+    .frontpage .frontpage__title {
+        align-items: center;
+        width: 17vw;  
+        margin-top: 30%;
+    }
+
+    .frontpage .frontpage__quote p {
+        display: none;
+    }
+
+    .frontpage .frontpage__item--1 {
+        order: 1;
+    }
+
+    .frontpage .frontpage__order--2 {
+        order: 3;
+    }
+
+    .frontpage .frontpage__order--3 {
+        order: 2;
+    }
+
+
+    
+}
+
+
+/****** to do *******
+    1. hamburger til høyre
 
 
 */
+

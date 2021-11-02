@@ -9,20 +9,41 @@
 </head>
 <body>
     <div class="frontpage">
-        <div class="frontpage__item frontpage__nav frontpage__columns--4">
-            <a href="about.html">About</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
+        <nav >
+            <div class="frontpage__item frontpage__nav">
+                <img src="assets/img/websiteImg/hamburger.svg" class="frontpage__hamburger frontpage__order--1" alt=" hamburger menu">
+                <div class="frontpage__hamburgermenu">
+                    <img src="assets/img/websiteImg/exit.svg" alt="exit menu">
+                    <div class="frontpage__hamburgernav">
+                        <button>Home</button>
+                        <button>About</button>
+                        <button>Gallery</button>
+                        <button>Contact</button>
+                    </div>
+                    
+                    <!-- funket ikke?
+                    <a href="about.html">About</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a-->
+                </div>
+                
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+        <div class="frontpage__item frontpage__quote frontpage__order--2"> <!--order for responsive-->
+            <p>The photographer that loves architecture 
+                and architechtural patterns</p>
+            <div class="frontpage__cta">
+                <a href="gallery.html">See Gallery</a>
+                <img src="assets/img/websiteImg/arrow.png" alt="orange arrow">
+            </div>
         </div>
-        <div class="frontpage__item frontpage__columns--4">
-            <div class="frontpage__quote ">qoute</div> <!--flex container for å samle quote og-->
-            <div class="frontpage__cta">cta</div>
-        </div>
-        <div class="frontpage__item frontpage__title frontpage__columns--4">title</div>
+        <p class="frontpage__item frontpage__title frontpage__order--3">T<br>O<br>F<br>U</p> <!--finne bedre metode-->
     </div>
  
     <footer></footer>
-
     <script src="js/app.js"></script>
     
 </body>
