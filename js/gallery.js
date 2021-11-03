@@ -35,17 +35,15 @@ function setUpGallery() {
         if (index === 0 || index === 3 || index === 5 || index === 8 || index === 10 || index === 13) {
             imageContainer.className = '.galleryContainer__image galleryContainer__image--small';
         } else {
-            imageContainer.className = '.galleryContainer__image galleryContainer__image--medium';
+            imageContainer.className = '.galleryContainer__image galleryContainer__image--big';
         }
 
         
         if (index === 4) {
             const quoteContainer = document.createElement('div');
-            quoteContainer.className = 'galleryContainer__quote--big';
+            quoteContainer.className = 'galleryContainer__quote--left';
 
             const quote = document.createElement('div');
-            quote.className = 'galleryContainer__quote';
-
             quote.innerText = gallery.quotes[0].text;
 
             quoteContainer.appendChild(quote);
@@ -53,11 +51,9 @@ function setUpGallery() {
 
         } else if (index === 9) {
             const quoteContainer = document.createElement('div');
-            quoteContainer.className = 'galleryContainer__quote--big';
+            quoteContainer.className = 'galleryContainer__quote--right';
 
             const quote = document.createElement('div');
-            quote.className = 'galleryContainer__quote';
-
             quote.innerText = gallery.quotes[1].text;
 
             quoteContainer.appendChild(quote);

@@ -244,31 +244,37 @@ body {
     margin: 0 auto;
     margin-top: 10%;
     gap: 30px;
-    border: 2px white solid;
+
 }
 
 .galleryContainer .galleryContainer__image--small {
     grid-column: span 2;
 }
 
-.galleryContainer .galleryContainer__image--medium {
+.galleryContainer .galleryContainer__image--big {
     grid-column: span 3;
 } 
 
-.galleryContainer .galleryContainer__quote {
-    
+.galleryContainer .galleryContainer__quote--left {
+    grid-column: span 5;
     color: var(--light);
     font-family: var(--second-font);
     font-size: 1.8em;
     line-height: 1.1;
     padding: 48px; 
     width: 38%;
-    background-color: blue;
+
 }
 
-.galleryContainer .galleryContainer__quote--big {
-    grid-column: span 5;
-    background-color: red;
+.galleryContainer .galleryContainer__quote--right {
+    grid-column: 4/6;
+    color: var(--light);
+    font-family: var(--second-font);
+    font-size: 1.8em;
+    line-height: 1.1;
+    padding: 48px; 
+    margin-left: 10%;
+    width: 100%;
 }
 
 
