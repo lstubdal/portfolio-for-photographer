@@ -1,5 +1,3 @@
-* {padding: 0; margin: 0; box-sizing: border-box;}
-
 body {
     background-color: var(--dark);
     font-size: 16px;
@@ -8,78 +6,24 @@ body {
 /************ Frontpage *************/
 
 .frontpage {
-    width: 100vw;
-    height: 100vh;
-    /* fix til noe bedre, tenk universiell utforming */
-    background-image: url('/assets/img/website/frontpage.png');
-    background-size: cover;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/assets/img/website/frontpage.png');
+    background-size: cover;
 }
 
-.frontpage .frontpage__item {                   /* for grid items */
-    width: 100%;
-    height: 100%;
-}
-
-.frontpage .frontpage__hamburger {
-    display: none;
-    cursor: pointer;
-}
-
-.frontpage .frontpage__hamburgermenu {
-    display: none;
-    width: 80%;
-    height: 35%;
-    margin-top: 40%;
-    position: absolute;
-    z-index: 1;
-    grid-column: span 3;
-    background-color: var(--golden);
-}
-
-.frontpage .frontpage__hamburgermenu .frontpage__hamburgernav {
+.frontpage__nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 65%;
-    width: 100%;
+    margin-left: 30%;
 }
 
-.frontpage .frontpage__hamburgermenu .frontpage__hamburgernav button {
-    color: var(--light);
-    font-family: var(--main-font);
-    font-size: 1.2em;
-    background: none;
-    border: none;  
-}
-
-.frontpage .frontpage__hamburgermenu .frontpage__hamburgernav a {
-    color: var(--light);
-}
-
-.frontpage .frontpage__hamburgermenu .frontpage__hamburgerExit{
-    margin-left: 80%; /* finne annen løsning... */
-    margin-top: 9%;
-    width: 11%;
-    height: 11%;
-}
-
-
-.frontpage .frontpage__nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 80%;
-    height: 100%;
-    margin-left: 25%;
-}
-
-.frontpage .frontpage__nav a {
+.frontpage__nav a {
     font-family: var(--main-font);
     font-size: 2em;
-    width: 70%;
     color: var(--golden);
     text-decoration: none;
 }
@@ -89,50 +33,65 @@ body {
     border-bottom: 1.2px solid var(--orange);
 }
 
-.frontpage .frontpage__quote {
+.frontpage__nav--mobile {
+    display: none;
+}
+
+.frontpage__nav--visibility {
+    display: none;
+}
+
+.frontpage__menu {
     display: flex;
-    justify-content: flex-end;
     flex-direction: column;
-    justify-content: centers;
-    align-items: center;
-    font-family: var(--second-font);
-    color: var(--orange);
-    font-size: 1em;
-    line-height: 1.2;
-    height: 100%;
-    width: 32%;
-    margin-left: 43%;
-}
-
-.frontpage .frontpage__quote p:hover {
-    font-size: 2em;
-    width: 250%;
-    margin-bottom: 20%;
-}
-
-.frontpage .frontpage__cta {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height:15%;
-    width: 300%;
-    padding:20px;
+    height: 30%;
+    width: 80%;
+    background-color: var(--golden);
+    margin-left: -20%;
+    margin-top: -15%;
+    position: absolute;
 }
 
-.frontpage .frontpage__cta a {
-    text-decoration: none;
+.frontpage__menu button {
+    color: var(--light);
+    font-family: var(--main-font);
+    font-size: 1.2em;
+    background: none;
+    border: none; 
+}
+
+.frontpage__exit {
+    margin-left: 70%; /* finne annen løsning... */
+    width: 11%;
+    height: 11%;
+
+}
+
+.frontpage__cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 15%;
+    margin-bottom: 5%;
+}
+
+.frontpage__cta a {
     font-size: 1.8em;
+    font-family: var(--second-font);
     color: var(--golden);
+    text-decoration: none;
 }
 
-.frontpage .frontpage__cta a:hover {
+.frontpage__cta a:hover {
     color: var(--orange); 
     border-bottom: 2px solid var(--orange);
-    
 }
-/*
-.frontpage .frontpage__cta a::after {
+
+
+.frontpage__cta a::after {
    content: '';
    display: inline-block;
    background-repeat: none;
@@ -141,204 +100,153 @@ body {
    height: 25px;
    width: 25px;
    margin-left: 10px;
-} */
+}
 
-.frontpage .frontpage__cta img {
-    height: 65px;
-    width: 65px;
-    padding: 20px;
+.frontpage__quote {
+    font-family: var(--second-font);
+    color: var(--orange);
+    font-size: 1em;
+    line-height: 1.1;
+    width: 32%;
+    margin-bottom: 10%;
+}
 
-} 
+.frontpage__quote:hover {
+    font-size: 2em;
+    width: 100%;
+    margin-bottom: 20%;
+    margin-left: 15%;
+}
 
-.frontpage .frontpage__cta img:hover {
-    animation-name: arrowRight;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-} 
-
-.frontpage .frontpage__title {
+.frontpage__title {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    width: 73%;
     font-family: var(--main-font);
     color: var(--golden);
     font-size: 2.7em;
-    width: 73%;
-}
-
-/********* Animation: frontpage **************/
-
-@keyframes arrowRight {
-    from {
-        transform: translate(0px);
-    }
-    to {
-        transform: translate(20px);
-    }
 }
 
 /********* Responsive: frontpage ************/
 
-@media screen and (max-width: 520px){
-    .frontpage {    /* endre til 'small' */
+@media screen and (max-width: 375px) {
+    .frontpage {
         background-image: url('/assets/img/website/frontpage-mobile.png');
+        grid-template-columns: 100vw;
     }
-
-    .frontpage .frontpage__item {
-        grid-column: span 3 ;
-    }
-
-    .frontpage .frontpage__hamburger {
-        width: 50%;
-        height: 100%;
-        color: var(--orange);
+    .frontpage__nav--mobile {
         display: block;
-        grid-column-start: 3;
-        margin-top: 20%;
-        margin-left: 230%; /* finne bedre løsning */
+        height: 50px;
+        width: 50px;
+        margin-left: 60%; /* finne bedre løsning */
+        margin-top: 10%;
     }
 
-    .frontpage .frontpage__nav a {
+    .frontpage__nav--desktop {
         display: none;
     }
 
-    .frontpage .frontpage__cta  {
-        width: 70vw;
-        margin-bottom: 20%;
-        margin-right: 50%;
-    }
- /*
-    .frontpage .frontpage__cta a::after {
-        content: '';
-        width: 25px;
-        height: 25px;
-        background-image: url(../assets/img/website/arrow.png);
-        background-repeat: none;
-        background-size: cover;
-    }
-
-    */
-
-    .frontpage .frontpage__title {
-        align-items: center;
-        width: 17vw;  
-        margin-top: 30%;
-    }
-
-    .frontpage .frontpage__quote p {
+    .frontpage__quote {
         display: none;
     }
 
-    .frontpage .frontpage__item--1 {
-        order: 1;
+    .frontpage__cta a {
+        width: 50vw;
+    }
+
+    .frontpage__title {
+        justify-content: flex-start;
+        margin-left:10%;
+        margin-top: 55%;
     }
 
     .frontpage .frontpage__order--2 {
         order: 3;
     }
-
     .frontpage .frontpage__order--3 {
         order: 2;
-    }   
+    }  
 }
 
+/************* Gallery *************/
 
-/************* Gallery ***************/
-
-.gallery {        
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-}
-
-.gallery .gallery__logo {
-    width: 70px;
-    height: 70px;
-    padding: 15px;
-    margin-left: 15%;
-    cursor: pointer;
-}
-
-.gallery .gallery__nav--desktop {
+.gallery__header {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
     align-items: center;
-    width: 95vw;
-    height: 20vh;
-    text-decoration: none;   
+    justify-content: flex-end;
+    width: 100vw;
+    height: 15vh;
 }
 
-.gallery__nav--desktop a {
-    font-family: var(--main-font);
-    font-size: 1.3em;
+.gallery__logo {
+    width: 35px;
+    height: 35px;
+    flex-grow: 1;
+}
+
+.gallery__nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    width: 90%;
+    padding-right: 3%;
+}
+
+.gallery__nav a {
     color: var(--golden);
     text-decoration: none;
-    width: 12%;
+    font-family: var(--main-font);
+    font-size: 1.7em;
 }
 
-.gallery .gallery__nav--mobile {
-     display: none;
+.gallery__nav .gallery__nav--spacer {
+    width: 15%;
 }
 
-.gallery .gallery__hamburgermenu {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    background-color: var(--golden);
-    cursor: pointer;  
-}
-
-.gallery .gallery__hamburgermenu--visibility {
-    display: none; 
-}
-
-.gallery .gallery__nav--mobile a {
-    text-decoration: none;
-    color: var(--light);
-}
-
-.gallery .gallery__hamburgermenu img {
-    display: none;
-}
-
-.gallery .gallery__nav--current  {
+.gallery__nav .gallery__nav--current {
     color: var(--orange);
     text-decoration: underline;
 }
 
-.galleryContainer {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    width: 70vw;
-    margin: 0 auto;
-    margin-top: 10%;
-    gap: 30px;
-
+.gallery__hamburger {
+    width: 50px;
+    height: 50px;
 }
 
-.galleryContainer .galleryContainer__image--small {
-    grid-column: span 2;
+.gallery__nav--mobile {
+    display: none;
+}
+
+.gallery__container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 70vw;
+    margin: 0 auto;
+    margin-top: 12%;
     border: 2px solid white;
 }
 
-.galleryContainer .galleryContainer__image--small:hover {
+.gallery__image--small {
+    grid-column: span 2;
+}
+
+.gallery__image--big {
+    grid-column: span 3; 
+} 
+
+.gallery__image--small:hover {
     transform: scale(1.02);    
     
 }
 
-.galleryContainer .galleryContainer__image--big {
-    grid-column: span 3; 
-    border: 2px solid white;
-} 
-
-.galleryContainer .galleryContainer__image--big:hover {
+.gallery__image--big:hover {
     transform: scale(1.02);    
 }
 
-.galleryContainer .galleryContainer__quote--left {
+.gallery__quote--left {
     grid-column: span 5;
     color: var(--light);
     font-family: var(--second-font);
@@ -348,62 +256,27 @@ body {
     width: 38%;
 }
 
-.galleryContainer .galleryContainer__quote--right {
+.gallery__quote--right {
     grid-column: 4/6;
     color: var(--light);
     font-family: var(--second-font);
     font-size: 1.8em;
     line-height: 1.1;
     padding: 48px; 
-    margin-left: 25%;
     width: 100%;
 }
 
-/************* Gallery: responsive ***************/
+@media screen and (max-width: 375px) {
 
-@media screen and (max-width: 520px) {
-
-
-    .gallery .gallery__nav--desktop {
+    .gallery__nav--desktop {
         display: none;
     }
 
-    .gallery .gallery__nav--mobile {
-        grid-column: 4/5;
-        grid-row: 2;
+    .gallery__nav--mobile {
         display: block;
     }
 
-    .galleryContainer .galleryContainer__image--small  {
-        grid-column: span 5;
-    }    
-
-    .gallery .gallery__logo {
-        height: 60px;
-        width: 60px;
-        margin-top: 25%;
+    .gallery__logo {
+        margin-left: 5%;
     }
 }
-
-@media screen and (max-width: 1080px) {
-
-    
-    /*
-        1. gjøre grid mindre
-        2. finne mindre bilder
-    */
-    
-}
-
-
-
-
-
-
-
-/****** to do *******
-    1. hamburger til høyre
-    2. responsive background image
-    3. remove hamburgermenu desktop
-*/
-

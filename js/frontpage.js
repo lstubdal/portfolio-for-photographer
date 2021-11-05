@@ -1,7 +1,7 @@
 
 function displayHamburgerMenu() {
-    const hamburgerMenu = document.querySelector('.frontpage__hamburgermenu');
-    const exit = document.querySelector('.frontpage__hamburgerExit');
+    const hamburgerMenu = document.querySelector('.frontpage__nav--visibility');
+    const exit = document.querySelector('.frontpage__exit'); /* endre snake case */
 
     hamburgerMenu.style.display = 'block'; 
 
@@ -14,11 +14,11 @@ function displayHamburgerMenu() {
 /********** event listeners ***************/
 
 /* hamburger button */
-const hamburger = document.querySelector('.frontpage__hamburger');
+const hamburger = document.querySelector('.frontpage__nav--mobile');
 hamburger.addEventListener('click', displayHamburgerMenu);
 
 /* ham navigation */
-const hamburgerNavButtons = document.querySelectorAll('.frontpage__hamburgernav button');
+const hamburgerNavButtons = document.querySelectorAll('.frontpage__menu');
 [...hamburgerNavButtons].forEach(button => {
     button.addEventListener('click', event => {         /* legge i funksjon? */
         if (button.innerText === 'Home'){

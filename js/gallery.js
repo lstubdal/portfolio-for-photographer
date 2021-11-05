@@ -25,21 +25,21 @@ const gallery =  {
 }
 
 function setUpGallery() {
-    const galleryContainer = document.querySelector('.galleryContainer');
+    const galleryContainer = document.querySelector('.gallery__container');
 
     for (let index = 0; index < gallery.images.length; index++) {
         
         const imageContainer = document.createElement('div');
 
         if (index === 0 || index === 3 || index === 5 || index === 8 || index === 10 || index === 13) {
-            imageContainer.className = '.galleryContainer__image galleryContainer__image--small';
+            imageContainer.className = 'gallery__image--small';
         } else {
-            imageContainer.className = '.galleryContainer__image galleryContainer__image--big';
+            imageContainer.className = 'gallery__image--big';
         }
 
         if (index === 4) {
             const quoteContainer = document.createElement('div');
-            quoteContainer.className = 'galleryContainer__quote--left';
+            quoteContainer.className = 'gallery__quote--left';
 
             const quote = document.createElement('div');
             quote.innerText = gallery.quotes[0].text;
@@ -49,7 +49,7 @@ function setUpGallery() {
 
         } else if (index === 9) {
             const quoteContainer = document.createElement('div');
-            quoteContainer.className = 'galleryContainer__quote--right';
+            quoteContainer.className = 'gallery__quote--right';
 
             const quote = document.createElement('div');
             quote.innerText = gallery.quotes[1].text;
@@ -59,26 +59,35 @@ function setUpGallery() {
             
         } else { 
             
+            console.log('Window width' + window.innerWidth); 
             const imageElement = document.createElement('img');
-            imageElement.srcset = `${gallery.images[index].mobile} 440w,
-                                    ${gallery.images[index].tablet} 640w,
-                                    ${gallery.images[index].file} 800w`;
-            imageElement.sizes = `(max-width: 420px) 440px, 
-                                    (max-width: 660px) 640px,
-                                    800px`;
+            imageElement.srcset = `${gallery.images[index].mobile} 520w,
+                                    ${gallery.images[index].tablet} 1000w,
+                                    ${gallery.images[index].file} 1200w`;
+            imageElement.sizes = `  (max-width: 600px) 520px, 
+                                    (max-width: 1040px) 1000px,
+                                    1200px`;
             imageElement.src = gallery.images[index].file;
             imageContainer.appendChild(imageElement);
             galleryContainer.appendChild(imageContainer);
         }
     }
 }
+
 function displayHamMenu(){
-    console.log('button clicked');
+    const hamburgerMenu = document.querySelector('.gallery__menu');
+    //const exit = document.querySelector('.gallery__exit');
+
+    hamburgerMenu.style.display = 'block'; 
+
+   /* exit.addEventListener('click', event => {
+        hamburgerMenu.style.display = 'none';
+    }) */
 
 }
 setUpGallery();
 
 /****** Event listeners *********/
 
-const logo = document.querySelector('.gallery__nav--mobile');
+const logo = document.querySelector('.gallery__hamburger');
 logo.addEventListener('click', displayHamMenu);

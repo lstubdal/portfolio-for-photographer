@@ -1,58 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Gallery | Tofu</title>
-      <link rel="stylesheet" href="css/variables.css" />
-      <link rel="stylesheet" href="css/style.css" />
-      <link rel="icon" type="image/png" href="assets/img/website/tofu.png" />
-   </head>
-   <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Tofu</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="assets/img/website/tofu.png" />
+</head>
+<body>
+    <header class="gallery__header">
+        <img  src="/assets/img/website/logo.svg" class="gallery__logo">
+        
+        <nav class="gallery__nav">
+            <a href="about.html" class="gallery__nav--desktop gallery__nav--spacer">About</a>
+            <a href="gallery.html" class="gallery__nav--desktop gallery__nav--spacer gallery__nav--current">Gallery</a>
+            <a href="contact.html" class="gallery__nav--desktop gallery__nav--spacer>">Contact</a>
+            <img src="assets/img/website/hamburger.svg" class="gallery__hamburger gallery__nav--mobile" alt="hamburger menu">
+        </nav>
+    </header>
 
-    <div class="gallery">
-        <head>
-            <div class="gallery__logo">
-                <a href="index.html">
-                    <img
-                        src="assets/img/website/logo.svg"
-                        class="gallery__logo"
-                        alt="logo/homebutton"
-                    />
-                </a>
-            </div>
+    <div class="gallery__container">
+        <!--img src="assets/img/gallery/skyscraper.jpg" class="gallery__image gallery__image--small">
+        <img src="assets/img/gallery/copper-wall.jpg"class="gallery__image gallery__image--big">
+        <img src="assets/img/gallery/white-building.jpg" class="gallery__image gallery__image--small">
+        <img src="assets/img/gallery/wooden-wall.jpg"class="gallery__image gallery__image--big"-->
 
-            <nav class="gallery__nav--desktop">
-               <a href="about.html">About</a>
-               <a href="gallery.html" class="gallery__nav--current">Gallery</a>
-               <a href="contact.html">Contact</a>
-            </nav>
-
-            <div class="gallery__nav--mobile">
-                <img src="assets/img/website/hamburger.svg" class="gallery__hamburgerbutton" alt="hamburger menu">
-                <nav class="gallery__hamburgermenu gallery__hamburgermenu--visibility">
-                    <a href="index.html">Home</a>
-                    <a href="index.html">About</a>
-                    <a href="index.html" class="gallery__nav--current">Gallery</a>
-                    <a href="index.html">Contact</a>
-                </nav>
-            </div>
-         </head>
-    </div>
-
-    
-    <div class="galleryContainer"></div>
-
-    <!---
-    <div class="galleryContainer">
-        <div class="galleryContainer__image galleryContainer__image--small">1</div>
-        <div class="galleryContainer__image galleryContainer__image--big">2</div>
-        <div class="galleryContainer__image galleryContainer__image--big">3</div>
-        <div class="galleryContainer__image galleryContainer__image--small">4</div>
-        <div class="galleryContainer__quote">
-            <p>The photographer that loves architecture and architechtural patterns</p>
-        </div-->
-
+    </div>  <!--bilder hentes frem fra javascript-->
     <script src="js/gallery.js"></script>
-   </body>
+    
+</body>
 </html>
