@@ -215,6 +215,32 @@ body {
     height: 50px;
 }
 
+.gallery__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 200px;
+    position: absolute;
+    background-color: var(--golden);
+    margin-top: 40%;
+}
+
+.gallery__menu--visibility {  /* ødelegger display flex for gellery__menu ... fikse */
+    display: none;
+}
+
+.gallery__exit {
+    margin-left: 70%;
+}
+
+.gallery__menu a {
+    font-size: 1.1em;
+    font-family: var(--second-font);
+    color: var(--light);
+}
+
 .gallery__nav--mobile {
     display: none;
 }
@@ -226,7 +252,6 @@ body {
     width: 70vw;
     margin: 0 auto;
     margin-top: 12%;
-    border: 2px solid white;
 }
 
 .gallery__image--small {
@@ -266,6 +291,9 @@ body {
     width: 100%;
 }
 
+
+/********* Responsive: gallery **********/
+
 @media screen and (max-width: 375px) {
 
     .gallery__nav--desktop {
@@ -279,4 +307,68 @@ body {
     .gallery__logo {
         margin-left: 5%;
     }
+
+    .gallery__image--small {
+        grid-column: 3/4;
+    }
+
+    .gallery__image--big {
+        grid-column: 2/4;
+    }
+
+    .gallery__quote--left {
+        font-size: 1.1em;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .gallery__quote--right {
+        grid-column: 3/4;
+        font-size: 1.1em;
+        width: 100%;
+    
+    }
+}
+
+
+/******** About *********/
+
+.about__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100vw;
+    height: 15vh;
+}
+
+.about__logo {
+    width: 35px;
+    height: 35px;
+    flex-grow: 1;
+    margin-left: 2%;
+}
+
+.about__nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    width: 90%;
+    padding-right: 3%;
+}
+
+.about__nav a {
+    color: var(--golden);
+    text-decoration: none;
+    font-family: var(--main-font);
+    font-size: 1.7em;
+}
+
+.about__nav .about__nav--spacer {
+    width: 13%;
+}
+
+.about__nav .about__nav--current {
+    color: var(--orange);
+    text-decoration: underline;
 }

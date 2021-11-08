@@ -1,7 +1,7 @@
 
 function displayHamburgerMenu() {
     const hamburgerMenu = document.querySelector('.frontpage__nav--visibility');
-    const exit = document.querySelector('.frontpage__exit'); /* endre snake case */
+    const exit = document.querySelector('.frontpage__exit'); 
 
     hamburgerMenu.style.display = 'block'; 
 

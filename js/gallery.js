@@ -75,19 +75,23 @@ function setUpGallery() {
 }
 
 function displayHamMenu(){
-    const hamburgerMenu = document.querySelector('.gallery__menu');
-    //const exit = document.querySelector('.gallery__exit');
+    const menu = document.querySelector('.gallery__menu--visibility');
+    const exit = document.querySelector('.gallery__exit');
 
-    hamburgerMenu.style.display = 'block'; 
+    menu.style.display = 'block';
 
-   /* exit.addEventListener('click', event => {
-        hamburgerMenu.style.display = 'none';
-    }) */
+    exit.addEventListener('click', event => {
+        menu.style.display = 'none';
+    });
 
 }
 setUpGallery();
 
 /****** Event listeners *********/
+const logo = document.querySelector('.gallery__logo');
+logo.addEventListener('click', event => {
+    window.location.href = 'index.html';
+})
 
-const logo = document.querySelector('.gallery__hamburger');
-logo.addEventListener('click', displayHamMenu);
+const menu = document.querySelector('.gallery__hamburger');
+menu.addEventListener('click', displayHamMenu);
