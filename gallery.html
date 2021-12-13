@@ -2,34 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Tofu</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" type="image/png" href="assets/img/website/tofu.png" />
+    <link
+        rel="icon"
+        type="image/png"
+        href="/assets/img/website/tofu.svg"
+ />
 </head>
 <body>
-    <header class="gallery__header">
-        <img  src="/assets/img/website/logo.svg" class="gallery__logo">
-        
-        <nav class="gallery__nav">
-            <a href="about.html" class="gallery__nav--desktop gallery__nav--spacer">About</a>
-            <a href="gallery.html" class="gallery__nav--desktop gallery__nav--spacer gallery__nav--current">Gallery</a>
-            <a href="contact.html" class="gallery__nav--desktop gallery__nav--spacer>">Contact</a>
-            <img src="assets/img/website/hamburger.svg" class="gallery__hamburger gallery__nav--mobile" alt="hamburger button">
-                <div class="gallery__menu gallery__menu--visibility">
-                    <img src="assets/img/website/exit.svg" class="gallery__exit" alt="exit menu">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="gallery.html" class="gallery__nav--current">Gallery</a>
-                    <a href="about.html">Contact</a>
-                </div>
-        </nav>
-    </header>
 
-    <div class="gallery__container"></div>  <!--bilder hentes frem fra javascript-->
+    <header class="header">
+        <a href="index.html">
+            <img  src="/assets/img/website/logo.svg" class="header__logo">
+        </a>
+        
+        <nav class="nav">
+            <a href="about.html" class="nav--desktop nav--spacer">About</a>
+            <a href="gallery.html" class="nav--desktop nav--spacer nav--current">Gallery</a>
+            <a href="contact.html" class="nav--desktop nav--spacer>">Contact</a>
+
+            <img src="assets/img/website/hamburger.svg" class="nav__hamburger nav--mobile" alt="hamburger menu"/> 
+     
+            <div class="nav--visibility">
+               <div class="nav__menu--mobile">
+                  <img src="assets/img/website/exit.svg" class="nav__exit" alt="exit menu"/>
+                  <button>Home</button>
+                  <button>About</button>
+                  <button>Gallery</button>
+                  <button>Contact</button>
+               </div>
+            </div>
+        </nav>
+    </header> 
+    
+    <div class="gallery"></div>  <!--bilder hentes frem fra javascript-->
+
+    <div class="footer">
+        <a href="" class="footer__page">About</a>
+        <a href="" class="footer__page">Gallery</a>
+        <a href="" class="footer__page">Contact</a>
+     </div> 
 
     <script src="js/gallery.js"></script>
+    <script src="js/navigtation.js"></script>
 </body>
 </html>

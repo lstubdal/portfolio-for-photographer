@@ -3,6 +3,105 @@ body {
     font-size: 16px;
 }
 
+/************ Navigation (different on frontpage) *************/
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100vw;
+    height: 15vh;
+}
+
+.header--contactPage {
+    height: 15vh;
+    background-color: var(--dark);
+}
+
+.header__logo {
+    flex-grow: 1;
+    padding-left: 3em;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    padding-right: 3%;
+}
+
+.nav a {
+    color: var(--golden);
+    text-decoration: none;
+    font-family: var(--main-font);
+    font-size: 1.7em;
+}
+
+.nav a:hover {
+    color: var(--light);
+}
+
+.nav--visibility {
+    display: none;
+}
+
+.nav--mobile {
+    display: none;
+}
+
+.nav__menu--mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
+    width: 50%;
+    background-color: var(--golden);
+    position: absolute;
+    right: 0;
+    margin-right: 2.5%;
+    margin-top: -3%;
+    cursor: pointer;
+}
+
+.nav__menu--mobile button {
+    color: var(--light);
+    font-family: var(--main-font);
+    font-size: 1.2em;
+    background: none;
+    border: none; 
+    cursor: pointer;
+}
+
+.nav__exit {
+    cursor: pointer;
+    margin-left: 70%;
+    margin-top: -2%;
+}
+.nav .nav--current {
+    color: var(--orange);
+    text-decoration: underline 2px solid;
+}
+
+.nav--spacer {
+    width: 15%;
+}
+
+/********* Header: responsive ********/
+
+@media screen and (max-width: 840px) {
+    
+    .nav--mobile {
+        display: block;
+    }
+
+    .nav--desktop {
+        display: none;
+    }
+}
+
+
 /************ Frontpage *************/
 
 .frontpage {
@@ -18,7 +117,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 30%;
+    width: 65%;
 }
 
 .frontpage__nav a {
@@ -28,45 +127,9 @@ body {
     text-decoration: none;
 }
 
-.frontpage .frontpage__nav a:hover {
+.frontpage__nav a:hover {
     color: var(--orange);
     border-bottom: 1.2px solid var(--orange);
-}
-
-.frontpage__nav--mobile {
-    display: none;
-}
-
-.frontpage__nav--visibility {
-    display: none;
-}
-
-.frontpage__menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 30%;
-    width: 80%;
-    background-color: var(--golden);
-    margin-left: -20%;
-    margin-top: -15%;
-    position: absolute;
-}
-
-.frontpage__menu button {
-    color: var(--light);
-    font-family: var(--main-font);
-    font-size: 1.2em;
-    background: none;
-    border: none; 
-}
-
-.frontpage__exit {
-    margin-left: 70%; /* finne annen løsning... */
-    width: 11%;
-    height: 11%;
-
 }
 
 .frontpage__cta {
@@ -128,19 +191,20 @@ body {
     font-size: 2.7em;
 }
 
+.frontpage__nav--mobile {
+    display: none;
+}
+
+.nav--frontpage {
+    display: none;
+}
+
 /********* Responsive: frontpage ************/
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 600px) {
     .frontpage {
         background-image: url('/assets/img/website/frontpage-mobile.png');
         grid-template-columns: 100vw;
-    }
-    .frontpage__nav--mobile {
-        display: block;
-        height: 50px;
-        width: 50px;
-        margin-left: 60%; /* finne bedre løsning */
-        margin-top: 10%;
     }
 
     .frontpage__nav--desktop {
@@ -167,99 +231,81 @@ body {
     .frontpage .frontpage__order--3 {
         order: 2;
     }  
+
+    .nav--frontpage {
+        display: block;
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        margin-top: 10%;
+    }
+
+    .nav__menu--frontpage {
+        margin-top: 5%;
+    }
+
+}
+
+/************ About *************/
+
+.about__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--orange);
+    font-size: 1.9em;
+    font-family: var(--main-font);
+    padding: 0.2em
+}
+
+.about__img {
+    padding-top: 10%;
+}
+
+
+.about__paragraph {
+    margin-left: 30px;
+}
+
+/********* Responsive: about ************/
+
+@media screen and (max-width: 840px) {
+    .about__content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        font-size: 1.5em;
+        padding: 1em;
+    }
+
+    .about__paragraph {
+        width: 90%;
+    }  
 }
 
 /************* Gallery *************/
-
-.gallery__header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100vw;
-    height: 15vh;
-}
-
-.gallery__logo {
-    width: 35px;
-    height: 35px;
-    flex-grow: 1;
-}
-
-.gallery__nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-grow: 1;
-    width: 90%;
-    padding-right: 3%;
-}
-
-.gallery__nav a {
-    color: var(--golden);
-    text-decoration: none;
-    font-family: var(--main-font);
-    font-size: 1.7em;
-}
-
-.gallery__nav .gallery__nav--spacer {
-    width: 15%;
-}
-
-.gallery__nav .gallery__nav--current {
-    color: var(--orange);
-    text-decoration: underline;
-}
-
-.gallery__hamburger {
-    width: 50px;
-    height: 50px;
-}
-
-.gallery__menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 350px;
-    height: 200px;
-    position: absolute;
-    background-color: var(--golden);
-    margin-top: 40%;
-}
-
-.gallery__menu--visibility {  /* ødelegger display flex for gellery__menu ... fikse */
-    display: none;
-}
-
-.gallery__exit {
-    margin-left: 70%;
-}
-
-.gallery__menu a {
-    font-size: 1.1em;
-    font-family: var(--second-font);
-    color: var(--light);
-}
-
-.gallery__nav--mobile {
-    display: none;
-}
-
-.gallery__container {
+.gallery {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     width: 70vw;
     margin: 0 auto;
-    margin-top: 12%;
+    margin-top: 10%;
+}
+
+.gallery__image--spacer {
+    margin-left: 40%;
 }
 
 .gallery__image--small {
-    grid-column: span 2;
+    grid-column: span 2 ;
 }
 
-.gallery__image--big {
+.gallery__image--medium {
     grid-column: span 3; 
+} 
+
+.gallery__image--big {
+    grid-column: span 5; 
 } 
 
 .gallery__image--small:hover {
@@ -288,25 +334,13 @@ body {
     font-size: 1.8em;
     line-height: 1.1;
     padding: 48px; 
-    width: 100%;
+    width: 90%;
 }
 
 
 /********* Responsive: gallery **********/
 
-@media screen and (max-width: 375px) {
-
-    .gallery__nav--desktop {
-        display: none;
-    }
-
-    .gallery__nav--mobile {
-        display: block;
-    }
-
-    .gallery__logo {
-        margin-left: 5%;
-    }
+@media screen and (max-width: 800px) {
 
     .gallery__image--small {
         grid-column: 3/4;
@@ -326,49 +360,85 @@ body {
         grid-column: 3/4;
         font-size: 1.1em;
         width: 100%;
-    
     }
 }
 
-
-/******** About *********/
-
-.about__header {
+/********* Contact **********/
+.contact {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-end;
+    height: 100vh;
     width: 100vw;
-    height: 15vh;
+    padding-bottom: 3em;
 }
 
-.about__logo {
-    width: 35px;
-    height: 35px;
-    flex-grow: 1;
-    margin-left: 2%;
-}
-
-.about__nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-grow: 1;
+.contact__background {
+    position: absolute;
+    height: 100%;
     width: 90%;
-    padding-right: 3%;
+    z-index: -1;
 }
 
-.about__nav a {
-    color: var(--golden);
-    text-decoration: none;
-    font-family: var(--main-font);
-    font-size: 1.7em;
-}
-
-.about__nav .about__nav--spacer {
-    width: 13%;
-}
-
-.about__nav .about__nav--current {
+.contact__information {
+    display: flex;
+    justify-content: flex-start;
     color: var(--orange);
+    font-family: var(--second-font);
+    font-size: 1.8em;
+    width: 150%;
+    border-bottom: var(--orange) solid 1px;
+}
+
+.contact__information:hover {
+    color: var(--light);
+    border-bottom: var(--light) solid 2px;
+}
+
+.contact__item {
+    padding: 0.5em;
+}
+
+/********* Contact responsive **********/
+@media screen and (max-width: 800px) {
+    .contact__information {
+        font-size: 1.5em;
+        width: 100%;
+    }
+
+    .contact__background {
+        height: 70%;
+        width: 70%;
+    }
+}
+
+/********* Footer **********/
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    width: 100vw;
+    margin-top: 5%;
+    border-top: var(--golden) 2px solid;
+}
+
+.footer--contactPage {
+    border: 0;
+}
+
+.footer__page {
+    color: var(--golden);
+    font-size: 1.5em;
+    font-family: var(--second-font);
+    text-decoration: none;
+    padding: 0px 15px 0px 15px;
+}
+
+.footer__page:hover {
+    color: var(--light);
     text-decoration: underline;
 }
+
+
