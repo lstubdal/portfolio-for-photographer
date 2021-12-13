@@ -74,6 +74,19 @@ body {
     cursor: pointer;
 }
 
+.nav--frontpage {
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    margin-top: 10%;
+}
+
+.nav__menu--frontpage {
+    margin-top: 5%;
+}
+
+
 .nav__exit {
     cursor: pointer;
     margin-left: 70%;
@@ -100,7 +113,6 @@ body {
         display: none;
     }
 }
-
 
 /************ Frontpage *************/
 
@@ -139,6 +151,7 @@ body {
     align-items: center;
     margin-left: 15%;
     margin-bottom: 5%;
+
 }
 
 .frontpage__cta a {
@@ -146,13 +159,13 @@ body {
     font-family: var(--second-font);
     color: var(--golden);
     text-decoration: none;
+    
 }
 
 .frontpage__cta a:hover {
     color: var(--orange); 
     border-bottom: 2px solid var(--orange);
 }
-
 
 .frontpage__cta a::after {
    content: '';
@@ -162,7 +175,7 @@ body {
    background-size: cover;
    height: 25px;
    width: 25px;
-   margin-left: 10px;
+   margin-left: 10px; 
 }
 
 .frontpage__quote {
@@ -172,6 +185,8 @@ body {
     line-height: 1.1;
     width: 32%;
     margin-bottom: 10%;
+    opacity: 0.3;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .frontpage__quote:hover {
@@ -179,6 +194,7 @@ body {
     width: 100%;
     margin-bottom: 20%;
     margin-left: 15%;
+    opacity: 1;
 }
 
 .frontpage__title {
@@ -232,18 +248,6 @@ body {
         order: 2;
     }  
 
-    .nav--frontpage {
-        display: block;
-        height: 50px;
-        width: 50px;
-        position: absolute;
-        margin-top: 10%;
-    }
-
-    .nav__menu--frontpage {
-        margin-top: 5%;
-    }
-
 }
 
 /************ About *************/
@@ -292,10 +296,6 @@ body {
     margin-top: 10%;
 }
 
-.gallery__image--spacer {
-    margin-left: 40%;
-}
-
 .gallery__image--small {
     grid-column: span 2 ;
 }
@@ -311,6 +311,10 @@ body {
 .gallery__image--small:hover {
     transform: scale(1.02);    
     
+}
+
+.gallery__image--medium:hover {
+    transform: scale(1.02);    
 }
 
 .gallery__image--big:hover {
@@ -337,6 +341,24 @@ body {
     width: 90%;
 }
 
+.gallery__imageInformation {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background-color: var(--dark);
+}
+
+.gallery__imageInformation p {
+    font-size: 2em;
+    color: var(--golden);
+    font-family: var(--second-font);
+}
 
 /********* Responsive: gallery **********/
 

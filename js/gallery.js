@@ -20,18 +20,17 @@ const gallery =  {
 
         {title: 'Wave wall', year: 2008, location: 'Stockholm', file: 'assets/img/gallery/wave-color-pattern.jpg', mobile: 'assets/img/gallery/mobile/wave-color-pattern.jpg', tablet: 'assets/img/gallery/tablet/wave-color-pattern.jpg'},
         {title: 'Copper house', year: 2011, location: 'Beijing', file: 'assets/img/gallery/copper-house.jpg', mobile: 'assets/img/gallery/mobile/copper-house.jpg', tablet: 'assets/img/gallery/tablet/copper-house.jpg'},
-        {title: 'Golden walls', year: 2019, location: 'London', file: 'assets/img/gallery/golden-walls.jpg', mobile: 'assets/img/gallery/mobile/golden-walls.jpg', tablet: 'assets/img/gallery/tablet/.jpg'},
-        
+        {title: 'Golden walls', year: 2019, location: 'London', file: 'assets/img/gallery/golden-walls.jpg', mobile: 'assets/img/gallery/mobile/golden-walls.jpg', tablet: 'assets/img/gallery/tablet/golden-walls.jpg'},
     ]
 }
 
 function setUpGallery() {
     const galleryContainer = document.querySelector('.gallery');
-
+    
     for (let index = 0; index < gallery.images.length; index++) {
         
         const imageContainer = document.createElement('div');
-        giveContainerClassName(index, imageContainer)
+        giveContainerClassName(index, imageContainer);
         
         if (index === 4) {
             createLeftQuote(galleryContainer);
@@ -40,8 +39,7 @@ function setUpGallery() {
             createRightQuote(galleryContainer);
             
         } else { 
-            getImages(galleryContainer, imageContainer, index);
-            
+            getImages(galleryContainer, imageContainer, index); 
         }
     }
 }
@@ -69,8 +67,9 @@ function createRightQuote(galleryContainer) {
 }
 
 function getImages(galleryContainer, imageContainer, index) {
+
     const imageElement = document.createElement('img');
-    imageElement.srcset = `${gallery.images[index].mobile} 520w,
+    imageElement.srcset = `${gallery.images[index].mobile} 520w,           
                             ${gallery.images[index].tablet} 1000w,
                             ${gallery.images[index].file} 1200w`;
 
@@ -79,8 +78,21 @@ function getImages(galleryContainer, imageContainer, index) {
                             1200px`;
 
     imageElement.src = gallery.images[index].file;
+    
+    const informationContainer = document.createElement('div');
+    informationContainer.className = 'gallery__imageInformation';
 
+    const imgTitle = document.createElement('p');
+    const imgYear = document.createElement('p');
+
+    imgTitle.innerText = gallery.images[index].title;
+    imgYear.innerText = gallery.images[index].year;
+
+    informationContainer.appendChild(imgTitle);
+    informationContainer.appendChild(imgYear);
+    
     imageContainer.appendChild(imageElement);
+    imageContainer.appendChild(informationContainer);
     galleryContainer.appendChild(imageContainer);
 }
 
@@ -95,5 +107,6 @@ function giveContainerClassName(index, imageContainer) {
         imageContainer.className = 'gallery__image--medium';
     }
 }
+
 
 setUpGallery();
