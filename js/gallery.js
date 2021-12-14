@@ -28,7 +28,6 @@ function setUpGallery() {
     const galleryContainer = document.querySelector('.gallery');
     
     for (let index = 0; index < gallery.images.length; index++) {
-        
         const imageContainer = document.createElement('div');
         giveContainerClassName(index, imageContainer);
         
@@ -83,12 +82,17 @@ function getImages(galleryContainer, imageContainer, index) {
     informationContainer.className = 'gallery__imageInformation';
 
     const imgTitle = document.createElement('p');
+    const imgLocation = document.createElement('p');
     const imgYear = document.createElement('p');
 
     imgTitle.innerText = gallery.images[index].title;
+    imgLocation.innerText = gallery.images[index].location
     imgYear.innerText = gallery.images[index].year;
 
+    imgYear.className = 'gallery__imageInformationYear'
+
     informationContainer.appendChild(imgTitle);
+    informationContainer.appendChild(imgLocation);
     informationContainer.appendChild(imgYear);
     
     imageContainer.appendChild(imageElement);
