@@ -31,53 +31,48 @@ function setUpGallery() {
         const imageContainer = document.createElement('div');
         giveContainerClassName(index, imageContainer);
         
-        if (index === 4) {
-            createLeftQuote(galleryContainer);
+        if (index === 4 || index === 8) {
+            createQuote(galleryContainer, index);
 
-        } else if (index === 8) {
-            createRightQuote(galleryContainer);
-            
-        } else { 
+        }  else { 
             getImages(galleryContainer, imageContainer, index); 
         }
     }
 }
 
-function createLeftQuote(galleryContainer) {
+function createQuote(galleryContainer, index) {
     const quoteContainer = document.createElement('div');
-    quoteContainer.className = 'gallery__quote--left';
-
     const quote = document.createElement('div');
-    quote.innerText = gallery.quotes[0].text;
 
-    quoteContainer.appendChild(quote);
-    galleryContainer.appendChild(quoteContainer);
-}
-
-function createRightQuote(galleryContainer) {
-    const quoteContainer = document.createElement('div');
-    quoteContainer.className = 'gallery__quote--right';
-
-    const quote = document.createElement('div');
-    quote.innerText = gallery.quotes[1].text;
-
+    if (index === 4) {
+        quoteContainer.className = 'gallery__quote--left';
+        
+        quote.innerText = gallery.quotes[0].text;
+    } else {
+        if (index === 8) {
+            quoteContainer.className = 'gallery__quote--right';
+            quote.innerText = gallery.quotes[1].text;
+        }
+    }
+    
     quoteContainer.appendChild(quote);
     galleryContainer.appendChild(quoteContainer);
 }
 
 function getImages(galleryContainer, imageContainer, index) {
 
-    const imageElement = document.createElement('img');
+    const imageElement = document.createElement('img');                 /* use src.set to use different versions of images based on screenwidth */
     imageElement.srcset = `${gallery.images[index].mobile} 520w,           
-                            ${gallery.images[index].tablet} 1000w,
+                    
                             ${gallery.images[index].file} 1200w`;
 
     imageElement.sizes = `  (max-width: 600px) 520px, 
-                            (max-width: 1040px) 1000px,
+                            
                             1200px`;
 
     imageElement.src = gallery.images[index].file;
     
+    /* add information per image (overlay) */
     const informationContainer = document.createElement('div');
     informationContainer.className = 'gallery__imageInformation';
 
@@ -111,6 +106,5 @@ function giveContainerClassName(index, imageContainer) {
         imageContainer.className = 'gallery__image--medium';
     }
 }
-
 
 setUpGallery();

@@ -1,8 +1,14 @@
+/* display hamburger listener */
 const hamburger = document.querySelector('.nav__hamburger');
 hamburger.addEventListener('click', displayHamburgerMenu)
 
+/* ham navigation listener */
+const hamburgerNavButtons = document.querySelectorAll('.nav__menu--mobile button');
+[...hamburgerNavButtons].forEach(button => {
+    hamburgerNavigation(button);
+})
+
 function displayHamburgerMenu() {
-    console.log('trykket');
     const hamburgerMenu = document.querySelector('.nav--visibility');
     const exit = document.querySelector('.nav__exit'); 
 
@@ -13,24 +19,27 @@ function displayHamburgerMenu() {
     }) 
 }
 
-/* ham navigation */
-const hamburgerNavButtons = document.querySelectorAll('.nav__menu--mobile button');
-[...hamburgerNavButtons].forEach(button => {
-    button.addEventListener('click', event => {         /* legge i funksjon? */
-        if (button.innerText === 'Home'){
-            window.location.href = 'index.html'
-        }
+function hamburgerNavigation(button) {
+    button.addEventListener('click', event => {   
+        /* use switchcase to nagivate trough pages, use innerText as expression */      
+        switch(button.innerText) {        
+            case 'Home':
+                window.location.href = 'index.html';
+                break;
 
-        if (button.innerText === 'About'){
-            window.location.href = 'about.html'
-        }
+            case 'About':
+                window.location.href = 'about.html';
+                break;
 
-        if (button.innerText === 'Gallery') {
-            window.location.href = 'gallery.html';
-        }
+            case 'Gallery':
+                window.location.href = 'gallery.html';
+                break;
+            
+            case 'Contact':
+                window.location.href = 'contact.html';
+                break; 
+                
 
-        if (button.innerText === 'Contact'){
-            window.location.href = 'contact.html'
         }
     })
-})
+}
