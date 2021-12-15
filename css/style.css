@@ -1,13 +1,11 @@
 body {
     background-color: var(--dark);
     font-size: 16px;
+    font-family: var(--font);
 }
 
 /******* Navigation (different on frontpage) **********/
 
-@media  screen and (min-width: 1400px){
-    
-}
     .header {
         display: flex;
         align-items: center;
@@ -37,7 +35,7 @@ body {
     .nav a {
         color: var(--golden);
         text-decoration: none;
-        font-family: var(--main-font);
+        font-family: var(font);
         font-size: 1.7em;
     }
     
@@ -65,15 +63,6 @@ body {
         right: 0;
         margin-right: 2.5%;
         margin-top: -3%;
-        cursor: pointer;
-    }
-    
-    .nav__menu--mobile button {
-        color: var(--light);
-        font-family: var(--main-font);
-        font-size: 1.2em;
-        background: none;
-        border: none; 
         cursor: pointer;
     }
     
@@ -113,7 +102,7 @@ body {
     }
     
     .frontpage__nav a {
-        font-family: var(--main-font);
+        font-family: var(font);
         font-size: 2em;
         color: var(--golden);
         text-decoration: none;
@@ -135,7 +124,7 @@ body {
     
     .frontpage__cta a {
         font-size: 1.8em;
-        font-family: var(--second-font);
+        font-family: var(--font);
         color: var(--golden);
         text-decoration: none; 
     }
@@ -157,7 +146,7 @@ body {
     }
     
     .frontpage__quote {
-        font-family: var(--second-font);
+        font-family: var(--font);
         color: var(--orange);
         font-size: 1em;
         line-height: 1.1;
@@ -180,7 +169,7 @@ body {
         justify-content: flex-end;
         align-items: center;
         width: 73%;
-        font-family: var(--main-font);
+        font-family: var(font);
         color: var(--golden);
         font-size: 2.7em;
     }
@@ -200,7 +189,7 @@ body {
         align-items: center;
         color: var(--orange);
         font-size: 1.9em;
-        font-family: var(--main-font);
+        font-family: var(font);
         padding: 0.2em
     }
     
@@ -252,7 +241,7 @@ body {
     .gallery__quote--left {
         grid-column: span 5;
         color: var(--light);
-        font-family: var(--second-font);
+        font-family: var(--font);
         font-size: 1.8em;
         line-height: 1.1;
         padding: 48px; 
@@ -262,7 +251,7 @@ body {
     .gallery__quote--right {
         grid-column: 4/6;
         color: var(--light);
-        font-family: var(--second-font);
+        font-family: var(--font);
         font-size: 1.8em;
         line-height: 1.1;
         padding: 48px; 
@@ -294,7 +283,7 @@ body {
     .gallery__imageInformation p {
         font-size: 2em;
         color: var(--golden);
-        font-family: var(--second-font);
+        font-family: var(--font);
     }
     
     /********* Contact **********/
@@ -319,7 +308,7 @@ body {
         display: flex;
         justify-content: flex-start;
         color: var(--orange);
-        font-family: var(--second-font);
+        font-family: var(--font);
         font-size: 1.8em;
         width: 150%;
         border-bottom: var(--orange) solid 1px;
@@ -352,7 +341,7 @@ body {
     .footer__page {
         color: var(--golden);
         font-size: 1.5em;
-        font-family: var(--second-font);
+        font-family: var(--font);
         text-decoration: none;
         padding: 0px 15px 0px 15px;
     }
@@ -363,13 +352,28 @@ body {
     }
 
 /********* Media query ********/
-@media screen and (max-width: 1200px) {  
+@media screen and (max-width: 980px) {  
     .nav--mobile {
         display: block;
     }
 
     .nav--desktop {
         display: none;
+    }
+
+    .nav__menu--mobile button {
+        color: var(--light);
+        font-family: var(font);
+        font-size: 3em;
+        background: none;
+        border: none; 
+        cursor: pointer;
+        padding: 0.3em;
+    }
+
+    .header__logo {
+        width: 110px;
+        height: 110px;
     }
 
     /***** frontpage ******/
@@ -386,6 +390,17 @@ body {
         margin-top: 10%;  
     }
 
+    .nav__hamburger {
+        width: 120px;
+        height: 120px;
+        padding-left: 30px;
+    }
+
+    .frontpage__cta::after {
+        width: 100px;
+        height: 100px;
+    }
+
     .frontpage__nav--desktop {
         display: none;
     }
@@ -396,12 +411,14 @@ body {
 
     .frontpage__cta a {
         width: 50vw;
+        font-size: 5em;
     }
 
     .frontpage__title {
         justify-content: flex-start;
         margin-left:10%;
         margin-top: 55%;
+        font-size: 8em;
     }
 
     .frontpage .frontpage__order--2 {
@@ -421,15 +438,22 @@ body {
 
     .about__paragraph {
         width: 90%;
+        font-size: 2.8em;
+        padding-left: 1em;
     }
 
     /*****gallery *****/
+
+    .gallery {
+        text-align: center;
+    }
     .gallery__image--small {
         grid-column: 3/4;
     }
 
     .gallery__image--big {
-        grid-column: 2/4;
+        grid-column: 1/5;
+        margin-right: 20px;
     }
 
     .gallery__quote--left {
@@ -448,6 +472,14 @@ body {
         font-size: 1.3em;
     }  
 
+    .gallery__quote--left {
+        font-size: 3em;
+    }
+
+    .gallery__quote--right {
+        font-size: 3em;
+    }
+
     /****** Contact *******/
     .contact__information {
         font-size: 1.5em;
@@ -457,6 +489,10 @@ body {
     .contact__background {
         height: 70%;
         width: 70%;
+    }
+
+    .footer {
+        font-size: 2em;
     }
 }
 
