@@ -7,4 +7,3 @@ Website contains:
 -about page
 -contact page
 
-Website developed for mobile and desktop using media queries
